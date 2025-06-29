@@ -14,7 +14,7 @@ spec:
     repoURL: "https://github.com/ray-project/kuberay.git"
     # Pinning to a specific stable version is recommended for production.
     # v1.1.2 is a recent stable version.
-    targetRevision: v1.1.2
+    targetRevision: v1.4.0
     path: ray-operator/config/crd
   destination:
     server: "https://kubernetes.default.svc"
@@ -28,5 +28,4 @@ spec:
     syncOptions:
       # Use ServerSideApply to avoid the "metadata.annotations: Too long" error.
       # This is the modern, recommended way to handle large CRDs.
-      syncOptions:
-        - Replace=true
+      - Replace=true

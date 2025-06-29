@@ -11,7 +11,7 @@ spec:
     # Use the official KubeRay Helm repository
     repoURL: "https://ray-project.github.io/kuberay-helm/"
     # Use a chart version that matches the CRD version for compatibility.
-    targetRevision: 1.1.2
+    targetRevision: 1.4.0
     helm:
       # This explicitly tells Argo CD's Helm engine to not install CRDs,
       # as we are managing them separately with the `kuberay-crds` app.
