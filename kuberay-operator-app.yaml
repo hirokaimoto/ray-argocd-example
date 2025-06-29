@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kuberay-operator
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: kuberay-operator
+    repoURL: "https://ray-project.github.io/kuberay-helm/"
+    targetRevision: 1.0.0 # Match the version with the CRDs for compatibility
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: ray-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
